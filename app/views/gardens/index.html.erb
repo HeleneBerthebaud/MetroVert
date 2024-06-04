@@ -1,0 +1,15 @@
+<div>
+<h1>Mes potagers</h1>
+<br>
+    <% @gardens.each do |garden| %>
+    <%# <%= link_to garden_path(garden), class: 'garden-card' do %>
+    <div class= garden-card>
+        <h2><%= link_to garden.name, garden_path(garden) %></h2>
+        <p>
+          <%= garden.address %> <br>
+          taille: <%= garden.size %> <br>
+          exposition: <%= garden.exposition %> <br>
+        </p>
+    </div>
+      <% end %>
+</div>

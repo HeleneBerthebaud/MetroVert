@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   end
 
   resources :garden_steps, only: [:show, :update]
+  resources :gardens
+  resources :steps, only: [:show]
 
-  get  "gardens/:id", to: "gardens#packagechoice", as: "packagechoice"
-  get "gardens/new", to: "gardens#new"
-  post "gardens", to: "gardens#create"
+
+  get "gardens/:id", to: "gardens#packagechoice", as: "packagechoice"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

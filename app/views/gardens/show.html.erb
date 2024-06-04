@@ -1,0 +1,26 @@
+<%= link_to 'Retour', gardens_path %>
+<h2>Garden show</h2>
+<br>
+
+
+<h2><%= @garden.name %></h2>
+<p>
+  <%= @garden.address %> <br>
+  taille: <%= @garden.size %> <br>
+  exposition: <%= @garden.exposition %> <br>
+</p>
+<h3> Steps :</h3>
+<br>
+<% @garden_steps.each do |garden_step| %>
+  <div class="step">
+    <p>
+      <strong> <%= garden_step.step.order %> -</strong>
+      <%= link_to garden_step.step.name, step_path(garden_step.step) %> :
+      <%= garden_step.step.description %>
+    </p>
+    <p>
+      <strong>Statut :</strong>
+      <%= garden_step.status %>
+    </p>
+  </div>
+<% end %>

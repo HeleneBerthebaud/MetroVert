@@ -1,0 +1,15 @@
+<div>
+<h1>1. <%= @step.name %></h1>
+</div>
+
+<div>
+  <% @tasks.each do |task| %>
+    <%= task.order %> - <%= task.name %> <br>
+    <%= task.description %>
+    <br>
+  <% end %>
+</div>
+
+<div>
+<%= link_to "Retour", garden_path(@garden) %>
+</div>

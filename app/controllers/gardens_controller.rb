@@ -1,4 +1,14 @@
 class GardensController < ApplicationController
+
+  def index
+    @gardens = Garden.all
+  end
+
+  def show
+    @garden = Garden.find(params[:id])
+    @garden_steps = @garden.garden_steps.includes(:step)
+  end
+  
   def new
     @garden = Garden.new
   end
@@ -14,4 +24,5 @@ class GardensController < ApplicationController
   def garden_params
     params.require(:garden).permit(:name, :size, :exposition, :address)
   end
+
 end
