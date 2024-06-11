@@ -1,26 +1,64 @@
-<div>
-  <%= link_to "Retour", garden_path(@garden) %>
-</div>
-<div>
-<h1><%= @step.order %> - <%= @step.name %></h1>
+<div class="garden-steps-main-container">
+<div class="garden_steps_banner">
+<h1><%= @step.name %></h1>
 </div>
 
-<div>
-  <% @tasks.each do |task| %>
-    <%= task.order %> - <%= task.name %> <br>
-    <%= task.description %>
-    <br>
-  <% end %>
-  <br>
+<div class="container-show">
+  <div
+  data-controller="tabs"
+  data-tabs-active-class="active"
+  data-tabs-default-tab-value="tab1">
+
+  <div class="nav-nav-tabs">
+    <button class="nav-link" id="tab1" data-tabs-target="btn" data-action="click->tabs#select">1</button>
+    <button class="nav-link" id="tab2" data-tabs-target="btn" data-action="click->tabs#select">2</button>
+    <button class="nav-link" id="tab3" data-tabs-target="btn" data-action="click->tabs#select">3</button>
+  </div>
+
+  <div class="rounded-lg categories">
+    <div data-tabs-target="tab" id="tab1" class="infos">
+      <% @tasks.order(1)%>
+      <div class= "infos-tech">
+        <h2><i class="fa-solid fa-shop fa-2xl" style="color: #0b4f30;"></i></h2>
+        <h3><%= @tasks[0].name %></h3>
+        <h2><i class="fa-solid fa-trowel fa-2xl" style="color: #0b4e31;"></i></h2>
+        <h5><%= @tasks[0].description %></h5>
+          <% if @tasks[0].name == "Aller chercher du terreau"%>
+            <a href="https://www.lovethegarden.com/fr-fr/calculateur/terreau" target="_blank" class="button">Calcul terreau</a>
+            <% else %>
+          <% end %>
+      </div>
+    </div>
+
+    <div data-tabs-target="tab" id="tab2" class='hidden'>
+      <p><% @tasks.order(2)%></p>
+          <div class= "infos-tech">
+            <h2><i class="fa-solid fa-leaf fa-2xl"></i></h2>
+            <h3><%= @tasks[1].name %></h3>
+            <h2><i class="fa-solid fa-seedling fa-2xl"></i></h2>
+            <h5><%= @tasks[1].description  %></h5>
+          </div>
+    </div>
+
+      <div data-tabs-target="tab" id="tab3" class='hidden'>
+        <p><% @tasks.order(3)%></p>
+          <div class= "infos-tech">
+            <h2><i class="fa-solid fa-worm fa-2xl"></i></h2>
+            <h3><%= @tasks[2].name %></h3>
+            <h2><i class="fa-solid fa-trowel fa-2xl" style="color: #0b4e31;"></i></h2>
+            <h5><%=@tasks[2].description %></h5>
+          </div>
+      </div>
+    </div>
 </div>
 
-<div>
+<div class="garden-steps-show-status">
  <%= simple_form_for(@garden_step) do |f| %>
     <div class="d-none">
     <%= f.input :status, input_html: {value: 0}%>
   </div>
-      <%= button_tag(type: 'submit', class: "btn btn-light border") do %>
-        <i class="icon-ok icon-white"></i> J'ai pas fini 😅
+      <%= button_tag(type: 'submit', class: "uncheck-step") do %>
+        <i class="fa-solid fa-xmark fa-2xl" style="color: #c02a39;"></i>
       <% end %>
   <% end %>
 <br>
@@ -28,8 +66,27 @@
     <div class="d-none">
       <%= f.input :status, input_html: {value: 1}%>
     </div>
-      <%= button_tag(type: 'submit', class: "btn btn-success border") do %>
-        <i class="icon-ok icon-white"></i> J'ai fini ! 💪
+      <%= button_tag(type: 'submit', class: "check-step") do %>
+        <i class="fa-solid fa-check fa-2xl" style="color: #0b4f30;"></i>
       <% end %>
     <% end %>
 </div>
+  <div>
+    <%= link_to gardens_path do %>
+      <div class="btnback">
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+<%# <div>
+  <% @tasks.each do |task| %>
+    <%# <%= task.order - <%= task.name %>
+    <%# <%= task.description %>
+    <%# <br>
+  <% end %>
+  <%# <br>
+</div> %>

@@ -1,39 +1,42 @@
-<div class="garden-category", >
-  <h2><%= @garden.name %></h2>
-  <div class="delete-button">
-    <%= link_to garden_path(@garden), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"} do %>
-      <i class="fa fa-trash" aria-hidden="true"></i>
+<div class="garden-body">
+  <div class="garden-category" >
+    <h2><%= @garden.name %></h2>
+    <div class="delete-button-card">
+      <div class="delete-button">
+        <%= link_to garden_path(@garden), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"} do %>
+          <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <% @garden_steps.each do |garden_step| %>
+      <%= link_to garden_step_path(garden_step) do %>
+        <div class="step-card">
+          <div class="step-image">
+            <%= cl_image_tag garden_step.step.photo.key, class: "img-card" %>
+          </div>
+          <div class="step-card-info">
+            <h5>
+              Étape <%= garden_step.step.order %>
+            </h5>
+            <p>
+              <%= garden_step.step.name %>
+            </p>
+            <div class="status">
+              <strong><%= garden_step.status %></strong>
+            </div>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
-</div>
 
-<div class="step">
-  <% @garden_steps.each do |garden_step| %>
-    <div class="step-card">
-
-      <div class="step-image">
-        <%= cl_image_tag garden_step.step.photo.key, class: "img-card"   %>
-      </div>
-x
-      <div class="step-card-info">
-        <h5>
-          Étape <%= garden_step.step.order %>
-        </h5>
-        <p>
-          <%= link_to garden_step.step.name, garden_step_path(garden_step) %>
-        </p>
-        <div class="status">
-          <strong><%= garden_step.status %></strong> <br>
-        </div>
-      </div>
-
+    <div class="retour-button">
+      <%= link_to 'Retour', gardens_path %> <br>
     </div>
-  <% end %>
-</div>
-
-  <div class="retour-button">
-    <%= link_to 'Retour', gardens_path %> <br>
-  </div>
+    </div>
 
  <% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
  <% content_for :meta_description, @offer.description %>

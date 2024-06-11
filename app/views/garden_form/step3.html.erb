@@ -1,9 +1,8 @@
 <h1 class="titre-form">Créer un nouveau potager - Étape 3</h1>
 <div class="formulaire-du-potager">
 <%= form_for @garden, url: step4_garden_form_index_path do |f| %>
-  <%= f.label :exposition %>
-  <%= f.text_field :exposition %>
-
+  <%= f.label :Exposition %>
+  <%= f.text_field :exposition, options_for_select(['Pas de soleil', 'Soleil le matin', 'Soleil le midi', 'Soleil en après midi']) %>
   <%= f.submit 'Next' %>
 <% end %>
 

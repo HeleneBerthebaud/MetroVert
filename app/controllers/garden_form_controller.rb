@@ -1,12 +1,13 @@
 class GardenFormController < ApplicationController
   def step1
     @garden = Garden.new
-    session[:garden_params] = {} unless session[:garden_params]
+    # session[:garden_params] = {} unless session[:garden_params]
   end
 
   def step2
-    raise
-    @garden = Garden.new(session[:garden_params])
+
+    # @garden = Garden.new(session[:garden_params])
+    @garden = Garden.new(name: garden_params[:name])
   end
 
   def step3
@@ -26,6 +27,6 @@ class GardenFormController < ApplicationController
   private
 
   def garden_params
-    params.require(:garden).permit(:name, :size, :user_id, garden_steps_attributes: [:id, :step_number, :description, :_destroy])
+    params.require(:garden).permit(:name, :size, :exposition, :address)
   end
 end

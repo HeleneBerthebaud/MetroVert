@@ -82,8 +82,7 @@ step1_3.photo.attach(io: file, filename: "surveiller.png", content_type: "image/
 Task.create!(
   order: 1,
   name: "Aller chercher du terreau",
-  description: "Acheter du terreau universel selon la taille approximatif de votre bac :
-  Allez sur ce site partenaire et entrez vos dimensions de bac :https://www.lovethegarden.com/fr-fr/calculateur/terreau",
+  description: "Selon la taille approximatif de votre bac, achetez le nombre de litres de terreau nécessaire.",
   step: step1_1
 )
 Task.create!(
@@ -91,9 +90,9 @@ Task.create!(
   name: "Acheter le nécessaire pour les légumes",
   description: "Rendez-vous en ligne ou dans un magasin de jardinage de votre choix
   pour acheter :
-  * 4 plants de tomates avec les variétés suivantes Roma, Montfavet, Flavio (vous pouvez mixer ou acheter une seule variété)
-  * 10 plants d'oignons jaunes ou rouges
-  * 1 sachet de graines de salades comprises dans celles qui aiment le soleil et supportent la chaleur : laitue romaine, laitue pommée, roquette ",
+  - 4 plants de tomates avec les variétés suivantes Roma, Montfavet, Flavio (vous pouvez mixer ou acheter une seule variété)
+  - 10 plants d'oignons jaunes ou rouges
+  - 1 sachet de graines de salades comprises dans celles qui aiment le soleil et supportent la chaleur : laitue romaine, laitue pommée, roquette ",
   step: step1_1
 )
 Task.create!(
@@ -121,7 +120,7 @@ Task.create!(
   Une fois les trous faits, enlevez chaque tomate de son pot, placez la dans un trou et
   refermez la terre sur elle.
   Une fois que tout est planté, vous pouvez arrosez les tomates avec l'équivalent d'un grand verre d'eau chacune. Les tomates
-  auront besoin d'un tuteur que vous pouvez acheter ou confectionner vous même https://www.jardiner-malin.fr/fiche/tuteurer-des-tomates.html",
+  auront besoin d'un tuteur que vous pouvez acheter ou confectionner vous même.",
   step: step1_2
 )
 
@@ -140,7 +139,7 @@ Task.create!(
   order: 1,
   name: "Surveillance",
   description: "Durant la vie de vos légumes et fruits, il vous faudra surveiller leur évolution au moins 3 fois par semaine. Les oignons nécessitent
-  très peu de soin, ils sont autosuffisants. Sur les tomates, il vous faudra enlever les gourmands qui poussent entre le tronc et les branches https://jardin-potager-bio.fr/couper-gourmands-tomates
+  très peu de soin, ils sont autosuffisants. Sur les tomates, il vous faudra enlever les gourmands qui poussent entre le tronc et les branches.
   Les salades nécessitent surtout de la surveillance pour ne pas être mangé dès leur premier stade par les limaces ou les escargots. Le plus efficace demeure de chasser les gastéropodes à la tombée de
   la nuit mais vous pouvez aussi acheter des produits en magasin de jardinage.",
   step: step1_3
@@ -150,9 +149,9 @@ Task.create!(
   order: 2,
   name: "Arrosage",
   description: "*Salades : votre salade aura besoin d'un arrosage régulier que ce soit par vous ou par la pluie, le sol doit être humide au moins 1 jour sur 2.
-  *Tomates : La tomate a besoin d'être arrosé sur son pied et non sur ses feuilles. vous pouvez partir sur un arrosage de un verre d'eau par pied tous les 3 jours
+  - Tomates : La tomate a besoin d'être arrosé sur son pied et non sur ses feuilles. vous pouvez partir sur un arrosage de un verre d'eau par pied tous les 3 jours
   sauf si le sol est humide.
-  *Oignons : l'oignon est facile à entretenir. Il est autosuffisant et rustique. Veillez à ce que son sol ne soit pas humide constamment car un risque de pourriture
+  - Oignons : l'oignon est facile à entretenir. Il est autosuffisant et rustique. Veillez à ce que son sol ne soit pas humide constamment car un risque de pourriture
   serait alors son principal danger. Avoir un peu d'humidité est suffisant pour lui, s'il est planté pas trop loin de ses amies salades et tomates il profitera de leur
   arrosage",
   step: step1_3
@@ -163,8 +162,8 @@ Task.create!(
   name: "Prévoir temps avant récolte",
   description: "Oignons : A recolter environ 4 mois après votre plantation. Ne vous précipitez pas trop pour récolter vos oignons. Pas mûrs à point, ils ne se conserveront pas.
   Attendez que les fanes soient bien sèches et qu’elles aient pratiquement disparu.
-  *Tomates : vos tomates vont être produites au fur et à mesure environ 3 mois après votre plantation. Vos tomates peuvent produire jusqu'à l'automne si les températures le permettent.
-  *Salades : vos salades peuvent être récoltées petites, grosses et au fur et à mesure. Si vous souhaitez les éclaircir au fur et à mesure vous le pouvez mais ce n'est pas
+  - Tomates : vos tomates vont être produites au fur et à mesure environ 3 mois après votre plantation. Vos tomates peuvent produire jusqu'à l'automne si les températures le permettent.
+  - Salades : vos salades peuvent être récoltées petites, grosses et au fur et à mesure. Si vous souhaitez les éclaircir au fur et à mesure vous le pouvez mais ce n'est pas
   obligatoire. Elles supportant la densification et vous pouvez ainsi consommer les feuilles au fur et à mesure sans arracher une salade entière. Elles arriveront à pleine
   maturité environ 2 mois après leur semis (un mois si vous avez choisi la roquette).",
   step: step1_3
@@ -202,7 +201,7 @@ step2_1 = Step.create!(
   order: 1,
   name: "Préparer ma terre et acheter le nécessaire",
   description: "Pour une jardinière, la préparation du terrain
-  est assez succincte. Suivez les 2 tâches de l'étape.",
+  est assez succincte. Suivez les tâches de l'étape.",
   package: package2
 )
 file = File.open(Rails.root.join("app/assets/images/garden_pictures/preparer_terrain.png"))
@@ -220,7 +219,7 @@ step2_2.photo.attach(io: file, filename: "planter.png", content_type: "image/png
 
 step2_3 = Step.create!(
   order: 3,
-  name: "ÉSurveillance avant récolte",
+  name: "Surveillance avant récolte",
   description: "Cette étape vous donne les astuces de la surveillance des fruits,
   l'arrosage, et les temps avant récolte",
   package: package2
@@ -238,8 +237,7 @@ step2_3.photo.attach(io: file, filename: "surveiller.png", content_type: "image/
 Task.create!(
   order: 1,
   name: "Aller chercher du terreau",
-  description: "Acheter du terreau universel selon la taille approximatif de votre bac :
-  Allez sur ce site partenaire et entrez vos dimensions de bac :https://www.lovethegarden.com/fr-fr/calculateur/terreau",
+  description: "Selon la taille approximatif de votre bac, achetez le nombre de litres de terreau nécessaire.",
   step: step2_1
 )
 
@@ -248,8 +246,8 @@ Task.create!(
   name: "Acheter le nécessaire",
   description: "Rendez-vous en ligne ou dans un magasin de jardinage de votre choix
   pour acheter :
-  * 4 plants de fraisiers avec les variétés suivantes mara des bois, pink panda, ou Alexandria, plus adaptés à l'ombre (vous pouvez mixer ou acheter une seule variété)
-  * 1 framboisier nain du type Little Sweet Sister, faites vous conseiller en magasin",
+  - 4 plants de fraisiers avec les variétés suivantes mara des bois, pink panda, ou Alexandria, plus adaptés à l'ombre (vous pouvez mixer ou acheter une seule variété)
+  - 1 framboisier nain du type Little Sweet Sister, faites vous conseiller en magasin",
   step: step2_1
 )
 
@@ -265,7 +263,7 @@ Task.create!(
   order: 1,
   name: "Plantons le framboisier ! ",
   description: "Du côté où vous avez à moitié rempli la jardinière, placez votre framboisier après l'avoir enlevé de
-  son pot. Mettez le terreau nécessaire pour récouvrir toutes les racines. Arrosez avec 1 grand verre d'eau. ",
+  son pot. Mettez le terreau nécessaire pour récouvrir toutes les racines.",
   step: step2_2
 )
 
@@ -276,16 +274,16 @@ Task.create!(
   Vos fraisiers ont besoin d'être plantés dans un trou qui
   fait la taille de leur pot. Chaque trou est écarté des autres par 10cms.
   Une fois les trous faits, enlevez chaque fraisier de son pot, placez le dans un trou et
-  refermez la terre sur ses racines, arrosez chaque fraisier avec un demi verre d'eau. ",
+  refermez la terre sur ses racines.",
   step: step2_2
 )
 
-# Task.create!(
-#   order: 3,
-#   name: "Tâche 2.2.3",
-#   description: "Description pour la tâche 2.2.3",
-# #   step: step2_2
-# )
+Task.create!(
+  order: 3,
+  name: "Arrosage à la plantation",
+  description: "Arrosez le framboisier avec 1 grand verre d'eau. Arrosez chaque fraisier avec un demi verre d'eau.",
+  step: step2_2
+)
 
 Task.create!(
   order: 1,

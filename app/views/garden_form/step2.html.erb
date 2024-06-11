@@ -1,10 +1,9 @@
 <h1 class="titre-form">Créer un nouveau potager - Étape 2</h1>
 <div class="formulaire-du-potager">
 
-<%= form_for @garden, url: step3_garden_form_index_path do |f| %>
-  <%= f.label :size %>
-  <%= f.text_field :size %>
-
+<%= form_with model: @garden, url: step3_garden_form_index_path do |f| %>
+  <%= f.label :Taille %>
+  <%= f.select :size, ['Jardinière', 'Bac potager', 'Potager partagé'] %>
   <%= f.submit 'Next' %>
 <% end %>
 </div>

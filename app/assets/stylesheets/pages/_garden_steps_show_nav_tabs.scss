@@ -1,0 +1,33 @@
+// app/assets/stylesheets/nav_tabs.scss
+
+// Import Bootstrap variables and mixins if you're using Bootstrap
+
+
+// Custom styles for nav tabs
+.nav-nav-tabs {
+  // Style for the entire nav-tabs container
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 20px;
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+
+  .nav-link {
+  border: 1px solid transparent;
+  border-radius: 50px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  padding: 10px 15px;
+  color: #0b4f30; // Customize the text color
+  background-color: #f8f9fa; // Customize the background color
+  transition: all 0.3s;
+  width: 60px;
+
+    &.active {
+      color: white;
+      background-color: #0b4f30;
+      border-color: #ddd #ddd #fff;
+    }
+  }
+}
+
