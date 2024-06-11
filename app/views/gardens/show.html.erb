@@ -1,9 +1,12 @@
 <div class="garden-body">
-  <div class="garden-category" >
-    <div class="cover-img-garden" style="background-image: url('<%= cl_image_path(@garden.photo.key) %>');">
-      <div class="garden-name" >
-        <h2><%= @garden.name %></h2>
+<div class="garden-category">
+  <div class="cover-img-garden" style="<%= @garden.photo.present? ? "background-image: url('#{cl_image_path(@garden.photo.key)}');" : "" %>">
+    <div class="garden-name">
+      <h2><%= @garden.name %></h2>
     </div>
+  </div>
+</div>
+
   </div>
      <div class="delete-button-card">
       <div class="delete-button">

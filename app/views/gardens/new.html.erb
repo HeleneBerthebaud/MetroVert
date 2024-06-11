@@ -1,12 +1,14 @@
-<%# <h1 class = "titre-form">Créer un nouveau potager</h1>
-<div class= 'formulaire-du-potager'> %>
-<%= form_with(model: [@garden], url: gardens_path, method: :post) do |form| %>
-  <%= form.hidden_field :current_step, value: @current_step %>
-  <div data-controller="step-one">
-    <label>
-      Name:
-      <%= form.text_field :name %>
-    </label>
-    <button type="submit" data-action="submit">Next</button>
+  <h1 class = "titre-form">Créer un nouveau potager</h1>
+<div class= "container-form">
+  <div class= 'formulaire-du-potager'>
+    <%= simple_form_for @garden do |f| %>
+    <%= f.input :name, label: "Nom" %>
+    <%= f.input :address, label: "Adresse" %>
+    <%= f.input :size, label: "Taille", collection: ['Jardinière', 'Bac potager', 'Potager partagé'], prompt: "Sélectionnez une taille" %>
+    <%= f.input :exposition, label: "Exposition", collection: ['Pas de soleil', 'Soleil le matin', 'Soleil le midi', 'Soleil en après-midi'], prompt: "Sélectionnez une exposition" %>
+    <%= f.input :photo, as: :file, label: "Image de couverture" %>
+    <%= f.button :submit, 'Créer mon potager' %>
+  <% end %>
+
   </div>
-<% end %>
+</div>
