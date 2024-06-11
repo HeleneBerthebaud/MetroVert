@@ -1,7 +1,11 @@
 <div class="garden-body">
   <div class="garden-category" >
-    <h2><%= @garden.name %></h2>
-    <div class="delete-button-card">
+    <div class="cover-img-garden" style="background-image: url('<%= cl_image_path(@garden.photo.key) %>');">
+      <div class="garden-name" >
+        <h2><%= @garden.name %></h2>
+    </div>
+  </div>
+     <div class="delete-button-card">
       <div class="delete-button">
         <%= link_to garden_path(@garden), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"} do %>
           <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
@@ -41,3 +45,9 @@
  <% content_for :meta_title, "#{@offer.name} is on #{DEFAULT_META["meta_product_name"]}" %>
  <% content_for :meta_description, @offer.description %>
  <% content_for :meta_image, cl_image_path(@offer.photo.path) %>
+    <%= link_to gardens_path do %>
+      <div class="btnback">
+        <i class="fa-solid fa-arrow-left-long"></i>
+      </div>
+    <% end %>
+</div>

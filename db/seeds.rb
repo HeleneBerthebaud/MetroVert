@@ -24,6 +24,8 @@ garden1 = Garden.create!(
   address: "43, boulevard Stalingrad, Nantes, France",
   user_id: 1
 )
+file = File.open(Rails.root.join("app/assets/images/garden_size/size_2_bac.jpeg"))
+garden1.photo.attach(io: file, filename: "size_2_bac.jpeg", content_type: "image/jpeg")
 
 garden2 = Garden.create!(
   name: "Mon magnifique balcon",
@@ -32,6 +34,8 @@ garden2 = Garden.create!(
   address: "43, boulevard Stalingrad, Nantes, France",
   user_id: 1
 )
+file = File.open(Rails.root.join("app/assets/images/garden_size/size_1_jardiniere.webp"))
+garden2.photo.attach(io: file, filename: "size_1_jardiniere.webp", content_type: "image/webp")
 
 garden3 = Garden.create!(
   name: "Le potager partagé",
@@ -40,6 +44,8 @@ garden3 = Garden.create!(
   address: "4, rue de la Moutonnerie, Nantes, France",
   user_id: 1
 )
+file = File.open(Rails.root.join("app/assets/images/garden_size/size_3_potager.webp"))
+garden3.photo.attach(io: file, filename: "size_3_potager", content_type: "image/webp")
 
 puts "Creating packages with steps and tasks"
 package1 = Package.create!(
