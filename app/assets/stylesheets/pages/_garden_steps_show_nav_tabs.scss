@@ -7,27 +7,44 @@
 .nav-nav-tabs {
   // Style for the entire nav-tabs container
   border-bottom: 2px solid #ddd;
-  margin-bottom: 20px;
+  margin-bottom: 2em;
   border: none;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  flex-direction: row;
 
   .nav-link {
-  border: 1px solid transparent;
-  border-radius: 50px;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  padding: 10px 15px;
-  color: #0b4f30; // Customize the text color
-  background-color: #f8f9fa; // Customize the background color
-  transition: all 0.3s;
-  width: 60px;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    padding: 10px 15px;
+    color: #0b4f30; // Customize the text color
+    background-color: #E7F4DA; // Customize the background color
+    border: solid;
+    border-color:#BCDD8C;
+    transition: all 0.3s;
+    width: 5em;
+    height: 5em;
+    margin-left: 1px;
+    h4 {
+      font-size: 1.5em;
+    }
 
     &.active {
       color: white;
       background-color: #0b4f30;
+      border: solid;
       border-color: #ddd #ddd #fff;
     }
   }
 }
 
+.filler-div {
+  height: 6em;
+  // border: solid; // border for debug
+  // border-color: #0b4f30;
+}

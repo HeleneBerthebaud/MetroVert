@@ -1,70 +1,75 @@
-.check-step {
-  border: none;
-  background-color: transparent;
+.garden-steps-main-container {
+  margin-top: 5em;
+  // height: 100vh;
+}
+
+.garden_steps_banner {
+  background-color: #BCDD8C;
+  text-align: center;
+  border-radius: 1em;
+
+  h1 {
+    color: white;
+    padding: 1em;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 3px rgba(11, 79, 48, 0.2);
   }
+}
 
-  .uncheck-step {
-    border: none;
-    background-color: transparent;
-    }
+.container-show {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-left: 1em;
+  padding-right: 1em;
 
-  .garden-steps-show-status{
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .garden_steps_banner{
-    background-color: #BCDD8C;
-    background: cover;
+  .pictogram {
+    padding: 0.5em;
     text-align: center;
-    border-radius: 10px;
-
-    h1{
-      color: white;
-      padding: 40px;
-      }
-      }
-
-      .garden-steps-main-container{
-        padding-top: 40px;
-
-  }
-  .container-show{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-
-    h2{
-      padding: 0.5em;
-      text-align: center;
-      margin-top: 1.5em;
-      margin-bottom: 0.5em;
-    }
-
-    h3{
-      padding: 0.5em;
-      text-align: center;
-      font-weight: bold ;
-    }
-
-    h5{
-      justify-content: center;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 2em;
-      margin-bottom: 2em;
-      margin-right: 2em;
-      font-size: 16px;
-      color: white;
-      background-color: #BCDD8C;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-      font-weight: bold ;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-size: 1em;
   }
 
+  h3 {
+    padding: 0.5em;
+    text-align: center;
+    font-weight: bold ;
   }
+
+  p {
+    text-align: justify;
+    // text-justify:distribute;
+    font-size: 1.1rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-right: 2em;
+    font-size: 16px;
+    color: white;
+    background-color: #BCDD8C;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold ;
+  }
+}
+
+.bottom-buttons-container {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content:space-around;
+  background-color: white;
+  box-shadow: 0px -1em 1.5em rgba(255, 255, 255, 1);
+}

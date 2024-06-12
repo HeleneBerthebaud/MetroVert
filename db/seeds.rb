@@ -88,7 +88,8 @@ step1_3.photo.attach(io: file, filename: "surveiller.png", content_type: "image/
 Task.create!(
   order: 1,
   name: "Aller chercher du terreau",
-  description: "Selon la taille approximatif de votre bac, achetez le nombre de litres de terreau nécessaire.",
+  description: "Selon la taille approximatif de votre bac, achetez le nombre de litres de terreau nécessaire.
+  Calculer la quantité de terreau nécessaire avec l'outil suivant :",
   step: step1_1
 )
 Task.create!(

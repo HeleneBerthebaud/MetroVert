@@ -34,7 +34,7 @@
               <p> <%= garden.size %> </p>
                 <div class="delete-garden-button">
                   <%= link_to  garden_path(garden), data: {turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?"} do %>
-                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <i class="fa-regular fa-trash-can" aria-hidden="true"></i>
                   <% end %>
                </div>
               </div>

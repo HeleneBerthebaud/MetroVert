@@ -11,6 +11,9 @@
   border-color: #BCDD8C;
   color: #BCDD8C;
   background-color: white;
+  margin: 1rem;
+  text-shadow: 1px 1px 2px rgba(11, 79, 48, 0.3);
+  z-index: 1;
 }
 
 // BOUTON BACK:
@@ -26,13 +29,15 @@
 .btn-green-filled {
   display: flex;
   justify-content: center;
+  align-items: center;
   font-size: 1.5rem;
   height: 2.9rem;
   border-radius: 1.5em;
   background-color: #BCDD8C;
-  margin: 1em;
-  color: white;
-  align-items: center;
+  margin: 2rem;
+  color: white !important;
+  text-shadow: 1px 1px 2px rgba(11, 79, 48, 0.3);
+  z-index: 1;
 }
 
 // BOUTON GREEN FILLED:
